@@ -1,0 +1,90 @@
+// Rest of the provided CSS...
+
+// Sidebar SCSS
+.container_dashbord {
+  max-width: 1410px;
+  margin: auto;
+}
+.upgrade_plan h3 {
+  font: 600 16px/24px var(--primary_font);
+}
+.upgrade_plan p {
+  font: 400 14px/20px var(--primary_font);
+  color: #bebebe;
+}
+.user_pictro .dropdown-toggle {
+  font: 600 21px/32px var(--primary_font);
+  background: transparent !important;
+  border: none !important;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.user_pictro .dropdown-toggle svg{
+  margin-left: auto;
+}
+.user_pictro .dropdown-toggle svg path{
+  fill: #fff;
+}
+.sideBar_tools {
+  background-color: #ffffff33;
+  border-radius: 9.85px;
+  padding: 9px 5px 10px 25px;
+
+  .user_pictro {
+    .dropdown-toggle::after {
+      margin-left: auto;
+    }
+
+    .dropdown-toggle {
+      font: 600 21px/32px var(--primary_font);
+    }
+  }
+
+  .tools_list {
+    ul li a {
+      padding: 15px 5px;
+      font: 500 15px/15px var(--primary_font);
+      text-decoration: none;
+    }
+
+    h3 {
+      font: 600 24px/36px var(--primary_font);
+    }
+  }
+
+  .free_btn {
+    display: block;
+    max-width: max-content;
+    margin: auto;
+    font: 500 14px/20px var(--primary_font);
+  }
+
+  .upgrade_btn {
+    background-color: #9600ff33 !important;
+    display: block;
+    margin: auto;
+    font: 600 14px/20px var(--primary_font);
+  }
+
+  .upgrade_plan {
+    h3 {
+      font: 600 16px/24px var(--primary_font);
+    }
+
+    p {
+      font: 400 14px/20px var(--primary_font);
+      color: #bebebe;
+    }
+  }
+
+  .user_pictro {
+    .dropdown-toggle::after {
+      margin-left: auto;
+    }
+
+    .dropdown-toggle {
+      font: 600 21px/32px var(--primary_font);
+    }
+  }
+}

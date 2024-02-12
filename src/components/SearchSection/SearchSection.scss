@@ -1,0 +1,39 @@
+.search-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 102px;
+  h4 {
+    color: white;
+    font-size: 46px;
+    text-align: center;
+  }
+  p {
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+  }
+
+  .gen-btn {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: 609px;
+    padding: 4px;
+    border-radius: 20px;
+    .form-control {
+      background: none;
+      border: none;
+      &:focus {
+        border: none;
+        outline: none;
+        box-shadow: none !important;
+      }
+    }
+    button {
+      background-color: rgba(150, 0, 255, 1);
+      border-radius: 6px;
+      color: white;
+    }
+  }
+}
