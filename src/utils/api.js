@@ -31,9 +31,7 @@ const axiosWrapper = async (method, url, data, token, isFormData = false) => {
       ...axiosConfig,
     };
 
-    const authToken = localStorage.getItem("authToken");
-
-    if (token && authToken) config.headers["Authorization"] = `Bearer ${token}`;
+    if (token) config.headers["Authorization"] = `Bearer ${token}`;
 
     if (isFormData) {
       config.headers["Content-Type"] = "multipart/form-data";

@@ -21,7 +21,7 @@ const SearchSection = () => {
           <div className="w-100">
             <Form.Control type="text" placeholder="A man on mars" />
           </div>
-            <Link to="art-generator">
+            <Link to="from-text">
             <button> Generate</button>
             </Link>
         </div>

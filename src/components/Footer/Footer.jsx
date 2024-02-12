@@ -80,9 +80,9 @@ const Footer = () => {
                   <i className="bi bi-geo-alt-fill me-2 primary_clr fw-bolder"></i>{" "}
                   Lumbung Hidup East Java
                 </a>
-                <a className="text-white d-block" href="mailto:Hello@Homco.com">
+                <a className="text-white d-block" href="mailto:support@metexlabs.com">
                   <i className="bi bi-envelope-fill me-2 primary_clr fw-bolder"></i>
-                  Hello@Homco.com
+                  support@metexlabs.com
                 </a>
                 <div className="footer_form">
                   <form action="" className="">

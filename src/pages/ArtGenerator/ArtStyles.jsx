@@ -12,16 +12,8 @@ import img9 from "@images/style9.svg";
 import img10 from "@images/style10.svg";
 import img11 from "@images/style11.svg";
 import img12 from "@images/style12.svg";
-export default function ArtStyles({ updateValueForKey }) {
-  const stylesList = [
-    { value: 0, label: "Pictro Cartoon", icon: img8 },
-    { value: 1, label: "Professional 3D Model", icon: img12 },
-    { value: 2, label: "Anime Artwork", icon: img10 },
-    { value: 3, label: "Breathtaking", icon: img9 },
-    { value: 4, label: "Fantasy Art", icon: img5 },
-    { value: 5, label: "Watercolor Anime (default)", icon: img1 },
-  ];
-
+export default function ArtStyles({ styles, updateValueForKey }) {
+  
   return (
     <>
       <div
@@ -53,11 +45,12 @@ export default function ArtStyles({ updateValueForKey }) {
               <div className="model_cards">
                 <div className="model_cards_wrapper">
                   <div className="row g-1">
-                    {stylesList?.map((style, index) => (
+                    {styles.map((style, index) => (
                       <div
                         onClick={() => updateValueForKey("styles", style.value)}
                         key={index + "--styles"}
                         className="col-4 cursor-pointer"
+                        data-bs-dismiss="modal"
                       >
                         <img src={style?.icon} className="w-100" alt="search" />
                       </div>

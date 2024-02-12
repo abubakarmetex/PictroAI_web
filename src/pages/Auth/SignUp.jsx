@@ -13,6 +13,7 @@ import { Helmet } from "react-helmet";
 import "./auth.scss";
 
 const Signup = () => {
+    const navigate = useNavigate();
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.auth?.loading);
   const inititialValues = {

@@ -3,12 +3,16 @@ import "./art-generator.scss";
 import TopBar from "./TopBar";
 import SideBar from "./Sidebar";
 import upload_img from "@images/icons/upload.svg";
+
 import axiosWrapper from "../../utils/api";
+
 export default function ImageRemix() {
   const [imageData, setImageData] = useState({
-    picture: "",
+    picture: null,
     styles: "5",
   });
+
+  const [imagePreview, setImagePreview] = useState(null);
 
   const handleSetFormData = async (data) => {
     const formData = new FormData();
@@ -17,20 +21,42 @@ export default function ImageRemix() {
         formData.append(key, data[key]);
       }
     }
-
     return formData;
   };
 
   const updateValueForKey = (key, value) => {
-    setImageData((prevState) => ({
-      ...prevState,
-      [key]: value,
-    }));
+    if (key === "picture") {
+      const file = value[0];
+      setImageData((prevState) => ({
+        ...prevState,
+        [key]: file,
+      }));
+
+      // Create a preview URL for the selected image
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagePreview(reader.result);
+      };
+      reader.readAsDataURL(file);
+    } else {
+      setImageData((prevState) => ({
+        ...prevState,
+        [key]: value,
+      }));
+    }
+  };
+
+  const cancelImage = () => {
+    // Reset the state and clear the image preview
+    setImageData({
+      picture: null,
+      styles: "5",
+    });
+    setImagePreview(null);
   };
 
   const generateImage = async () => {
     const data = handleSetFormData(imageData);
-    console.log(textData);
     try {
       const response = await axiosWrapper("post", `/avatar`, data, true, true);
       console.log(response);
@@ -48,19 +74,15 @@ export default function ImageRemix() {
         <main>
           <section className="container-fluid token py-0">
             <div className="row h-100">
-              <div class="col-9">
-                <div class="main_art_wrapper position-relative">
-                  <div class="main_img text-center">
+              <div className="col-9">
+                <div className="main_art_wrapper position-relative">
+                  <div className="main_img text-center">
                     <div className="img_upload">
-                      <label
-                        htmlFor=""
-                        for="upload"
-                        className="img_upload_lable"
-                      >
+                      <label htmlFor="upload" className="img_upload_label">
                         <input
                           type="file"
                           onChange={(e) => {
-                            updateValueForKey("picture", e.target.files[0]);
+                            updateValueForKey("picture", e.target.files);
                           }}
                           id="upload"
                           className="d-none"
@@ -68,21 +90,43 @@ export default function ImageRemix() {
                         <img src={upload_img} alt="icon" />
                         <span>Upload Image</span>
                       </label>
+                      {imagePreview && (
+                        <div className="image-preview-container">
+                          <img
+                            src={imagePreview}
+                            alt="Preview"
+                            className="uploaded-image-preview"
+                          />
+                          <button
+                            type="button"
+                            className="btn-close close-icon"
+                            aria-label="Close"
+                            onClick={cancelImage}
+                          ></button>
+                        </div>
+                      )}
                     </div>
                   </div>
-                  <div class="generate_form my-5 pt-5">
-                    <div class="hero_form">
-                      <form action="" class="position-relative">
+                  <div className="generate_form my-5 pt-5">
+                    <div className="hero_form">
+                      <form
+                        action=""
+                        className="position-relative"
+                        onSubmit={(e) => {
+                          e.preventDefault();
+                          generateImage();
+                        }}
+                      >
                         <input
                           type="text"
                           placeholder="A man on mars"
-                          class="w-100 p-3"
+                          className="w-100 p-3"
                         />
                         <button
-                          onClick={generateImage}
-                          class="btn btn-primary position-absolute"
+                          type="submit"
+                          className="btn btn-primary position-absolute"
                         >
-                          <i class="bi bi-star-fill"></i>
+                          <i className="bi bi-star-fill"></i>
                           Generate
                         </button>
                       </form>
@@ -90,8 +134,8 @@ export default function ImageRemix() {
                   </div>
                 </div>
               </div>
-              <div class="col-3">
-                <SideBar updateValueForKey={updateValueForKey} />
+              <div className="col-3">
+                {/* <SideBar updateValueForKey={updateValueForKey} /> */}
               </div>
             </div>
           </section>
@@ -99,4 +143,4 @@ export default function ImageRemix() {
       </div>
     </>
   );
-}
+};

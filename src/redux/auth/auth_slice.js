@@ -50,27 +50,7 @@ const authSlice = createSlice({
         state.error = payload;
         state.isLoggedIn = false;
       })
-      .addCase(registerUser.pending, (state) => {
-        state.userInfo = null;
-        state.userToken = null;
-        state.loading = true;
-        state.error = null;
-        state.isLoggedIn = true;
-      })
-      .addCase(registerUser.fulfilled, (state, { payload }) => {
-        state.userInfo = payload.user;
-        state.userToken = payload.token;
-        state.loading = false;
-        state.error = null;
-        state.isLoggedIn = true;
-      })
-      .addCase(registerUser.rejected, (state, { payload }) => {
-        state.userInfo = null;
-        state.userToken = null;
-        state.loading = false;
-        state.error = payload;
-        state.isLoggedIn = false;
-      });
+      
   },
 });
 

@@ -41,7 +41,7 @@ const Login = () => {
   return (
     <React.Fragment>
       <Helmet>
-        <title>Login | Template</title>
+        <title>Login</title>
       </Helmet>
       <div className="auth-main-wrapper">
         <Container>

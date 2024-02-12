@@ -7,7 +7,7 @@ const VideoSection = () => {
     <div className="video-section">
       <div className="video-container">
         <ReactPlayer
-          url="https://www.youtube.com/watch?v=3CxtK7-XtE0"
+          url="https://www.youtube.com/watch?v=0tTz14-bz7k"
           width="100%"
           height="400px"
           controls={true}

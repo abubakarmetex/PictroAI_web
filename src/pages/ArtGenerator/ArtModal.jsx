@@ -1,40 +1,11 @@
 import React, { useState } from "react";
 import "./art-generator.scss";
-import art_gen_card1 from "@images/model1.svg";
-import art_gen_card2 from "@images/model2.svg";
-import art_gen_card3 from "@images/model3.svg";
-import art_gen_card4 from "@images/model4.svg";
-import art_gen_card5 from "@images/model5.svg";
-import art_gen_card6 from "@images/model6.svg";
-import art_gen_card7 from "@images/model7.svg";
-import art_gen_card8 from "@images/model8.svg";
-import art_gen_card9 from "@images/model9.svg";
-import Dreamshaper from "@images/icons/Dreamshaper.svg";
 
-export default function ArtModal({ updateValueForKey }) {
-  const [models] = useState([
-    // { name: "Dream", value: "dreamshaper8", icon: Dreamshaper },
-    // { name: "", value: "epicDiffusion_epicDiffusion11" },
-    {
-      name: "Epic Realism",
-      value: "epicrealism_pureEvolutionV4",
-      icon: art_gen_card3,
-    },
-    {
-      name: "Majic",
-      value: "majicmixRealistic_betterV2V25",
-      icon: art_gen_card1,
-    },
-    // { name: "", value: "meinamix_meinaV11" },
-    {
-      name: "Realistic vision",
-      value: "realisticVisionV51_v51VAE",
-      icon: art_gen_card7,
-    },
-  ]);
+export default function ArtModal({models, updateValueForKey }) {
+  
 
   const handleSelectModel = (value) => {
-    updateValueForKey("model", value);
+    updateValueForKey("model",value)
   };
 
   return (
@@ -79,6 +50,7 @@ export default function ArtModal({ updateValueForKey }) {
                         }}
                         key={index + "--models"}
                         className="col-4 cursor-pointer"
+                        data-bs-dismiss="modal" 
                       >
                         <img
                           src={model?.icon}

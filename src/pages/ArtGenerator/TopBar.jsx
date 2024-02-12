@@ -15,8 +15,8 @@ export default function TopBar() {
           <a href="/dashboard"><img src={arrow_left} class="header_icons" alt="icon"/></a>
         </div>
         <div class="tools_icon d-flex align-items-center gap-4">
-          <a href="/dashboard/tool/from-text"><img src={text_edit_img} class="header_icons" alt="icon"/></a>
-          <a href="/dashboard/tool/image-remix"><img src={img_remix} class="header_icons" alt="icon"/></a>
+          <a href="/from-text"><img src={text_edit_img} class="header_icons" alt="icon"/></a>
+          <a href="/image-remix"><img src={img_remix} class="header_icons" alt="icon"/></a>
         </div>
         <div class="upgrade_token d-flex align-items-center gap-4">
           <a href=""><img src={Mode_img} class="header_icons" alt="icon"/></a>

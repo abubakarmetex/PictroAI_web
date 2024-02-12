@@ -8,10 +8,14 @@ import Down_arrow from "@images/icons/down_arrow.svg";
 import Img_3d from "@images/icons/3d.svg";
 
 export default function Sidebar({
+  models,
+  styles,
   inputData,
   setInputData,
   updateValueForKey,
 }) {
+  const model=models.filter(m=>m.value===inputData.model)[0]; 
+  const style=styles.filter(s=>s.value===inputData.styles)[0];
   return (
     <>
       <div className="sidebar_wrapper bg-black mt-2">
@@ -44,17 +48,17 @@ export default function Sidebar({
             >
               <span className="d-flex align-items-center gap-1">
                 <img
-                  src={Dreamshaper}
+                  src={model.icon}
                   className="me-1"
                   alt="icon"
                   height={"30px"}
                 />
-                Dreamshaper
+                {model.name}
               </span>
               <img src={Down_arrow} alt="icon" />
             </button>
           </div>
-          <ArtModal updateValueForKey={updateValueForKey} />
+          <ArtModal models={models} updateValueForKey={updateValueForKey} />
         </div>
         <div className="art_styles side_setting">
           <span className="tool_lable text-white ">
@@ -69,13 +73,13 @@ export default function Sidebar({
               data-bs-target="#stylesModel"
             >
               <span className="d-flex align-items-center gap-1">
-                <img src={Img_3d} className="me-1" alt="icon" height={"30px"} />
-                3D
+                <img src={style.icon} className="me-1" alt="icon" height={"30px"} />
+                {style.label}
               </span>
               <img src={Down_arrow} alt="icon" />
             </button>
           </div>
-          <ArtStyles updateValueForKey={updateValueForKey} />
+          <ArtStyles styles={styles} updateValueForKey={updateValueForKey} />
         </div>
         <div className="negative_prompt side_setting">
           <span className="tool_lable text-white">
@@ -97,13 +101,16 @@ export default function Sidebar({
             <span className="tool_lable text-white">
               CFG Scale <img src={Tool_tip} alt="icon" className="ms-1" />
             </span>
-            <span className="btn_shape header_icons text-white">7.5</span>
+            <span className="btn_shape header_icons text-white">{inputData.cfg_scale}</span>
           </div>
           <div>
             <form action="">
               <input
                 type="range"
-                onChange={(e) => updateValueForKey("cfg_scale", e.target.value)}
+                value={inputData.cfg_scale}
+                min={1}
+                max={20}
+                onChange={(e) => updateValueForKey("cfg_scale", parseInt(e.target.value,10))}
                 className="w-100"
               />
             </form>
@@ -115,13 +122,16 @@ export default function Sidebar({
               Step
               <img src={Tool_tip} alt="icon" className="ms-1" />
             </span>
-            <span className="btn_shape header_icons text-white">30</span>
+            <span className="btn_shape header_icons text-white">{inputData.steps}</span>
           </div>
           <div>
             <form action="">
               <input
+                min={20}
+                max={40}
+                value={inputData.steps}
                 type="range"
-                onChange={(e) => updateValueForKey("steps", e.target.value)}
+                onChange={(e) => updateValueForKey("steps", parseInt(e.target.value))}
                 className="w-100"
               />
             </form>
@@ -134,26 +144,18 @@ export default function Sidebar({
               <img src={Tool_tip} alt="icon" className="ms-1" />
             </span>
             <span
-              onChange={(e) => {
-                if (e.target.value < -1) {
-                  updateValueForKey("seed", -1);
-                } else {
-                  updateValueForKey("seed", e.target.value);
-                }
-              }}
               className="btn_shape header_icons text-white"
             >
               30
             </span>
           </div>
           <div>
-            <form action="">
               <input
-                type="text"
+                type="number"
                 placeholder="Enter a seed"
                 className="text-white"
+                onChange={(e)=>updateValueForKey("seed",parseInt(e.target.value,10))}
               />
-            </form>
           </div>
         </div>
       </div>
