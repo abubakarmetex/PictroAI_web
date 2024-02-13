@@ -1,48 +1,47 @@
 import React, { useState } from "react";
 import "./art-generator.scss";
 import TopBar from "./TopBar";
-import SideBar from "./Sidebar";
+import SideBar2 from "./Sidebar2";
 import upload_img from "@images/icons/upload.svg";
-
 import axiosWrapper from "../../utils/api";
 
 export default function ImageRemix() {
   const [imageData, setImageData] = useState({
     picture: null,
-    styles: "5",
   });
 
   const [imagePreview, setImagePreview] = useState(null);
 
-  const handleSetFormData = async (data) => {
+  const handleSetFormData = async () => {
     const formData = new FormData();
-    for (const key in data) {
-      if (data.hasOwnProperty(key)) {
-        formData.append(key, data[key]);
-      }
-    }
+    
+    // Append only the image to the form data
+    formData.append("picture", imageData.picture);
+
     return formData;
   };
 
   const updateValueForKey = (key, value) => {
     if (key === "picture") {
       const file = value[0];
-      setImageData((prevState) => ({
-        ...prevState,
-        [key]: file,
-      }));
 
-      // Create a preview URL for the selected image
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setImagePreview(reader.result);
-      };
-      reader.readAsDataURL(file);
-    } else {
-      setImageData((prevState) => ({
-        ...prevState,
-        [key]: value,
-      }));
+      // Basic validation to ensure the selected file is an image
+      if (file && file.type.startsWith("image/")) {
+        setImageData((prevState) => ({
+          ...prevState,
+          [key]: file,
+        }));
+
+        // Create a preview URL for the selected image
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          setImagePreview(reader.result);
+        };
+        reader.readAsDataURL(file);
+      } else {
+        // Handle non-image file selection (e.g., display an error message)
+        console.log("Please select a valid image file.");
+      }
     }
   };
 
@@ -50,16 +49,20 @@ export default function ImageRemix() {
     // Reset the state and clear the image preview
     setImageData({
       picture: null,
-      styles: "5",
     });
     setImagePreview(null);
   };
 
   const generateImage = async () => {
-    const data = handleSetFormData(imageData);
+    const data = handleSetFormData();
     try {
-      const response = await axiosWrapper("post", `/avatar`, data, true, true);
+      // Include your API endpoint for image generation
+      const response = await axiosWrapper("post", `/api/v1/avatar/`, data, true, true);
       console.log(response);
+
+      // Assuming the response includes the generated image URL
+      // Update the image preview with the generated image
+      setResponseImgUrl(response.image_url);
     } catch (error) {
       console.log(error);
     }
@@ -96,6 +99,10 @@ export default function ImageRemix() {
                             src={imagePreview}
                             alt="Preview"
                             className="uploaded-image-preview"
+                            style={{
+                              maxWidth: "538.06px",
+                              maxHeight: "284.69px",
+                            }}
                           />
                           <button
                             type="button"
@@ -135,7 +142,7 @@ export default function ImageRemix() {
                 </div>
               </div>
               <div className="col-3">
-                {/* <SideBar updateValueForKey={updateValueForKey} /> */}
+                {/* <SideBar2 updateValueForKey={updateValueForKey} /> */}
               </div>
             </div>
           </section>
@@ -143,4 +150,4 @@ export default function ImageRemix() {
       </div>
     </>
   );
-};
+}

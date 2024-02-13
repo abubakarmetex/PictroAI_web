@@ -7,7 +7,7 @@ import Dreamshaper from "@images/icons/Dreamshaper.svg";
 import Down_arrow from "@images/icons/down_arrow.svg";
 import Img_3d from "@images/icons/3d.svg";
 
-export default function Sidebar({
+export default function Sidebar2({
   models,
   styles,
   inputData,

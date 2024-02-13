@@ -62,22 +62,6 @@ section.token{
 .sidebar_wrapper::-webkit-scrollbar,.main_art_wrapper::-webkit-scrollbar{
   display: none;
 }
-.img_upload_lable{
-  background-color: black;
-  border: 1px dashed #7F7F7F;
-  border-radius: 8.54px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 284.69px;
-  max-width: 538.06px;
-  margin: auto;
-  flex-direction: column;
-  gap: 8px;
-  font: 400 9px/11px var(--primary_font);
-  color: #fff;
-  cursor: pointer;
-}
 input::placeholder{
   color: #fff;
 }
@@ -98,4 +82,21 @@ input::placeholder{
 }
 .art_modal input{
   margin-bottom: 20px;
+}
+
+.img_upload_label{
+  background-color: #000;
+  border: 1px dashed #7F7F7F;
+  border-radius: 8.54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 284.69px;
+  max-width: 538.06px;
+  margin: auto;
+  flex-direction: column;
+  gap: 8px;
+  font: 400 9px/11px var(--primary_font);
+  color: #fff;
+  cursor: pointer;
 }
