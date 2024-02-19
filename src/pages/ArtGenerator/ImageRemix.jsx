@@ -1,11 +1,56 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./art-generator.scss";
 import TopBar from "./TopBar";
 import SideBar2 from "./Sidebar2";
 import upload_img from "@images/icons/upload.svg";
 import axiosWrapper from "../../utils/api";
+import { useSelector } from 'react-redux';
+import art_gen_card1 from "@images/model1.svg";
+import art_gen_card2 from "@images/model2.svg";
+import art_gen_card3 from "@images/model3.svg";
+import art_gen_card4 from "@images/model4.svg";
+import art_gen_card5 from "@images/model5.svg";
+import art_gen_card6 from "@images/model6.svg";
+import art_gen_card7 from "@images/model7.svg";
+import art_gen_card8 from "@images/model8.svg";
+import art_gen_card9 from "@images/model9.svg";
+import Dreamshaper from "@images/icons/Dreamshaper.svg";
+import img1 from "@images/style1.svg";
+import img2 from "@images/style2.svg";
+import img3 from "@images/style3.svg";
+import img4 from "@images/style4.svg";
+import img5 from "@images/style5.svg";
+import img6 from "@images/style6.svg";
+import img7 from "@images/style7.svg";
+import img8 from "@images/style8.svg";
+import img9 from "@images/style9.svg";
+import img10 from "@images/style10.svg";
+import img11 from "@images/style11.svg";
+import img12 from "@images/style12.svg";
 
 export default function ImageRemix() {
+  const { userToken } = useSelector((state) => state?.auth);
+  const [responseImg,setResponseImgUrl]=useState(upload_img);
+  const styles = [
+    { value: 0, label: "Pictro Cartoon", icon: img8 },
+    { value: 1, label: "Professional 3D Model", icon: img12 },
+    { value: 2, label: "Anime Artwork", icon: img10 },
+    { value: 3, label: "Breathtaking", icon: img9 },
+    { value: 4, label: "Fantasy Art", icon: img5 },
+    { value: 5, label: "Watercolor Anime (default)", icon: img1 },
+  ]; 
+  const [textData, setTextData] = useState({
+  imageData: null ,
+  styles: 1,
+  });
+
+const updateValueForKey = (key, value) => {
+setTextData((prevState) => ({
+  ...prevState,
+  [key]: value,
+}));
+};
+
   const [imageData, setImageData] = useState({
     picture: null,
   });
@@ -20,30 +65,37 @@ export default function ImageRemix() {
 
     return formData;
   };
-
-  const updateValueForKey = (key, value) => {
+  const updatValueForKey = (key, value) => {
     if (key === "picture") {
       const file = value[0];
-
+  
       // Basic validation to ensure the selected file is an image
       if (file && file.type.startsWith("image/")) {
         setImageData((prevState) => ({
           ...prevState,
           [key]: file,
         }));
-
+  
         // Create a preview URL for the selected image
         const reader = new FileReader();
         reader.onloadend = () => {
           setImagePreview(reader.result);
         };
         reader.readAsDataURL(file);
+        console.log("This is the file before setting: "+file)
+        // Update the textData state to include the image data
+        setTextData((prevState) => ({
+          ...prevState,
+          imageData: file // Update imageData with the selected file
+        }));
+  
       } else {
         // Handle non-image file selection (e.g., display an error message)
         console.log("Please select a valid image file.");
       }
     }
   };
+
 
   const cancelImage = () => {
     // Reset the state and clear the image preview
@@ -54,19 +106,39 @@ export default function ImageRemix() {
   };
 
   const generateImage = async () => {
-    const data = handleSetFormData();
-    try {
-      // Include your API endpoint for image generation
-      const response = await axiosWrapper("post", `/api/v1/avatar/`, data, true, true);
-      console.log(response);
+    const formData = new FormData();
+    
+    // Ensure that textData.imageData contains the file object for the image
+    if (textData.imageData instanceof File) {
 
-      // Assuming the response includes the generated image URL
-      // Update the image preview with the generated image
-      setResponseImgUrl(response.image_url);
+      console.log("Before setting in the form"+textData.imageData)
+      // Append the image file to formData under the key "picture"
+      formData.append("picture", textData.imageData);
+    } else {
+      // Log an error or handle the case where the image data is missing
+      console.error("No image data available to upload.");
+      return; // Exit the function if no image data is available
+    }
+  
+    // Append other data to formData
+    formData.append("style", parseInt(textData.styles)); // Ensure styles is a string if it's not already
+    
+    console.log(textData.imageData instanceof File); // Should be true
+
+    try {
+      // Make the API call with formData. Adjust the axiosWrapper call as needed.
+      const response = await axiosWrapper("post", `/avatar/`, formData,userToken);
+      
+      console.log(response);
+  
+      // Update the image preview or handle the response as needed
+      setResponseImgUrl(response.data.image_url); // Adjust according to the actual response structure
     } catch (error) {
-      console.log(error);
+      console.error("Error generating image:", error);
     }
   };
+  
+  
 
   return (
     <>
@@ -85,7 +157,7 @@ export default function ImageRemix() {
                         <input
                           type="file"
                           onChange={(e) => {
-                            updateValueForKey("picture", e.target.files);
+                            updatValueForKey("picture", e.target.files);
                           }}
                           id="upload"
                           className="d-none"
@@ -114,35 +186,31 @@ export default function ImageRemix() {
                       )}
                     </div>
                   </div>
-                  <div className="generate_form my-5 pt-5">
-                    <div className="hero_form">
-                      <form
-                        action=""
-                        className="position-relative"
-                        onSubmit={(e) => {
-                          e.preventDefault();
-                          generateImage();
-                        }}
-                      >
+                  <div class="generate_form my-5 pt-5">
+                    <div class="hero_form ">
                         <input
                           type="text"
                           placeholder="A man on mars"
-                          className="w-100 p-3"
+                          class="w-100 p-3"
+                          onChange={(e) =>
+                            updateValueForKey("prompt", e.target.value)
+                          }
                         />
                         <button
-                          type="submit"
-                          className="btn btn-primary position-absolute"
+                          class="btn btn-primary position-absolute"
+                          onClick={generateImage}
                         >
-                          <i className="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
                           Generate
                         </button>
-                      </form>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="col-3">
-                {/* <SideBar2 updateValueForKey={updateValueForKey} /> */}
+                <SideBar2 updateValueForKey={updateValueForKey}
+                inputData={textData}
+                  styles={styles} />
               </div>
             </div>
           </section>
