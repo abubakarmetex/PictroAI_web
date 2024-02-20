@@ -30,7 +30,6 @@ import img12 from "@images/style12.svg";
 
 export default function ImageRemix() {
   const { userToken } = useSelector((state) => state?.auth);
-  const [responseImg,setResponseImgUrl]=useState(upload_img);
   const styles = [
     { value: 0, label: "Pictro Cartoon", icon: img8 },
     { value: 1, label: "Professional 3D Model", icon: img12 },
@@ -44,12 +43,12 @@ export default function ImageRemix() {
   styles: 1,
   });
 
-const updateValueForKey = (key, value) => {
-setTextData((prevState) => ({
-  ...prevState,
-  [key]: value,
-}));
-};
+  const updateValueForKey = (key, value) => {
+  setTextData((prevState) => ({
+    ...prevState,
+    [key]: value,
+  }));
+  };
 
   const [imageData, setImageData] = useState({
     picture: null,
@@ -82,7 +81,6 @@ setTextData((prevState) => ({
           setImagePreview(reader.result);
         };
         reader.readAsDataURL(file);
-        console.log("This is the file before setting: "+file)
         // Update the textData state to include the image data
         setTextData((prevState) => ({
           ...prevState,
@@ -123,16 +121,14 @@ setTextData((prevState) => ({
     // Append other data to formData
     formData.append("style", parseInt(textData.styles)); // Ensure styles is a string if it's not already
     
-    console.log(textData.imageData instanceof File); // Should be true
 
     try {
       // Make the API call with formData. Adjust the axiosWrapper call as needed.
-      const response = await axiosWrapper("post", `/avatar/`, formData,userToken);
+      const response = await axiosWrapper("post", `/avatar/`, formData,userToken,true);
       
-      console.log(response);
   
-      // Update the image preview or handle the response as needed
-      setResponseImgUrl(response.data.image_url); // Adjust according to the actual response structure
+      const newImageUrl = response.image_url;
+      setImagePreview(newImageUrl);
     } catch (error) {
       console.error("Error generating image:", error);
     }
