@@ -102,6 +102,7 @@ export default function ImageRemix() {
       picture: null,
     });
     setImagePreview(null);
+    setResponseImgUrl(null);
   };
 
   const generateImage = async () => {

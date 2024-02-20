@@ -37,7 +37,7 @@ const Footer = () => {
           </div>
           <div className="main_footer pb-5">
             <div className="row gy-3">
-              <div className="col-lg-6">
+              <div className="col-lg-9">
                 <h4 className="text-white">Information</h4>
                 <p className="text-white">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
@@ -45,7 +45,7 @@ const Footer = () => {
                   leo.
                 </p>
               </div>
-              <div className="col-lg-3">
+              {/* <div className="col-lg-3">
                 <h4 className="text-white">Navigation</h4>
                 <ul className="list-unstyled">
                   <li>
@@ -73,12 +73,12 @@ const Footer = () => {
                     </a>
                   </li>
                 </ul>
-              </div>
+              </div> */}
               <div className="col-lg-3 contect_sec">
                 <h4 className="text-white">Contact Us</h4>
                 <a href="" className="text-white d-block">
                   <i className="bi bi-geo-alt-fill me-2 primary_clr fw-bolder"></i>{" "}
-                  Lumbung Hidup East Java
+                Mini Commercial Phase-7 Bahria Town Islamabad Capital Territory Islamabad
                 </a>
                 <a className="text-white d-block" href="mailto:support@metexlabs.com">
                   <i className="bi bi-envelope-fill me-2 primary_clr fw-bolder"></i>
