@@ -28,6 +28,8 @@ const axiosWrapper = async (method, url, data, token, isFormData = false) => {
     const config = {
       method,
       url: `https://api.pictroai.com/api/v1${url}`,
+      // url: `http://127.0.0.1:8000/api/v1${url}`,
+
       ...axiosConfig,
     };
 

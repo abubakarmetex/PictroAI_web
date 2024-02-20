@@ -30,6 +30,7 @@ import img12 from "@images/style12.svg";
 
 export default function ImageRemix() {
   const { userToken } = useSelector((state) => state?.auth);
+  const [responseImg,setResponseImgUrl]=useState(null);
   const styles = [
     { value: 0, label: "Pictro Cartoon", icon: img8 },
     { value: 1, label: "Professional 3D Model", icon: img12 },
@@ -128,6 +129,7 @@ export default function ImageRemix() {
       
   
       const newImageUrl = response.image_url;
+      setResponseImgUrl(newImageUrl);
       setImagePreview(newImageUrl);
     } catch (error) {
       console.error("Error generating image:", error);
@@ -172,6 +174,16 @@ export default function ImageRemix() {
                               maxHeight: "284.69px",
                             }}
                           />
+
+
+                        {responseImg && (
+                        <a
+                          href={responseImg}
+                          download="generated-image.jpg"
+                          className="btn btn-primary download_btn"
+                        >
+                          Download
+                        </a>)}
                           <button
                             type="button"
                             className="btn-close close-icon"
@@ -183,7 +195,7 @@ export default function ImageRemix() {
                     </div>
                   </div>
                   <div class="generate_form my-5 pt-5">
-                    <div class="hero_form ">
+                    <div class="hero_form">
                         <input
                           type="text"
                           placeholder="A man on mars"

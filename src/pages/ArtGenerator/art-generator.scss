@@ -1,5 +1,4 @@
 /*  Art page Css */
-
 .art_header{
   padding: 8px 0px;
 }
@@ -99,4 +98,36 @@ input::placeholder{
   font: 400 9px/11px var(--primary_font);
   color: #fff;
   cursor: pointer;
+}
+
+.hero_form{
+  position: relative;
+}
+
+.hero_form input{
+  border-radius: 20px;
+}
+
+.hero_form button{
+  right: 5px;
+  top: 12px;
+}
+
+.side_setting input{
+  background-color: #343a40;
+  width: 100%;
+  border: 0;
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.download_btn{
+  text-indent: -9999px;
+  overflow: hidden;
+  background: url('../../assets/icons/download.png') no-repeat;
+  background-size: contain;
+  width: 40px; 
+  height: 40px; 
+  display: inline-block; 
 }

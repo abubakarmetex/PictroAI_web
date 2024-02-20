@@ -61,8 +61,8 @@ export default function FormText() {
       ];  
   const [textData, setTextData] = useState({
     model: "epicrealism_pureEvolutionV4",
-    prompt: "",
-    negative_prompt: "",
+    prompt: "man on mars",
+    negative_prompt: "none",
     seed: -1,
     styles: "Craft Clay",
     cfg_scale: 1,
