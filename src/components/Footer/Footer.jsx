@@ -30,9 +30,9 @@ const Footer = () => {
                 <h2 className="text-white">
                   LETS CHANGE YOUR OWN HOME INTERIOR DESIGN NOW
                 </h2>
-                <a href="" className="d-inline-block btn text-white">
+                <Link to="" className="d-inline-block btn text-white">
                   Contact Us
-                </a>
+                </Link>
               </div>
             </div>
           </div>

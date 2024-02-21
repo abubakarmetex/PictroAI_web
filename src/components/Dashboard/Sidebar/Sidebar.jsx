@@ -110,7 +110,7 @@ const Sidebar = () => {
             Craft magical AI artworks without limits and share them.
           </p>
           <Link
-            href=""
+            to=""
             className="btn btn-primary upgrade_btn d-flex align-items-center gap-2 justify-content-center"
           >
             <img src={manageIcon} alt="" />

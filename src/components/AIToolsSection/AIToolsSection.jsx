@@ -14,7 +14,7 @@ const AIToolsSection = () => {
       imageSrc: img,
     },
     {
-      title: "Image Enhancer",
+      title: "Image Anime",
       description: "Enhance your images using advanced AI algorithms.",
       imageSrc: img2,
     },

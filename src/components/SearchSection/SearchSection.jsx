@@ -9,13 +9,12 @@ const SearchSection = () => {
       <div className="search-section">
         <h4>
           Text to Art Generation with <br />
-          Pictro AI Art Generatoe
+          Pictro AI Art Generator
         </h4>
         <p>
-          Create awe-inspiring masterpieces effortlessly and explore the endless
-          possibilities <br />
-          of AI generated art. Enter a prompt, choose a style, and watch Imagine{" "}
-          <br /> AI art generator bring your ideas to life!
+        Unleash your creativity effortlessly and unlock the boundless potential of AI-generated art! <br />
+        Simply input your inspiration, select a style, and witness Imagine AI Art Generator {" "}
+          <br />breathe life into your visions turning them into awe-inspiring masterpieces!
         </p>
         <div className="gen-btn mt-3">
           <div className="w-100">

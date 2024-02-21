@@ -1,0 +1,30 @@
+Copy code
+# Dependency directories
+node_modules/
+
+# Build files
+build/
+dist/
+
+# Environment files
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+
+# Editor configuration
+*.iml
+
+# Logs and debugging
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency lock files
+package-lock.json
+yarn.lock
