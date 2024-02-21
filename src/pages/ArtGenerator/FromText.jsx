@@ -40,8 +40,6 @@ export default function FormText() {
         { value: "Craft Clay", label: "Watercolor Anime (default)", icon: img1 },
       ];
     const models = [
-        // { name: "Dream", value: "dreamshaper8", icon: Dreamshaper },
-        // { name: "", value: "epicDiffusion_epicDiffusion11" },
         {
           name: "Epic Realism",
           value: "epicrealism_pureEvolutionV4",
@@ -61,9 +59,9 @@ export default function FormText() {
       ];  
   const [textData, setTextData] = useState({
     model: "epicrealism_pureEvolutionV4",
-    prompt: "man on mars",
+    prompt: "Portrait of a child playing in a park, using natural lighting and candid expressions",
     negative_prompt: "none",
-    seed: -1,
+    seed: 11,
     styles: "Craft Clay",
     cfg_scale: 1,
     steps: 20,

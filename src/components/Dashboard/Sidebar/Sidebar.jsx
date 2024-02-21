@@ -9,6 +9,7 @@ import profileIcon from "@icons/Profile.png";
 import manageIcon from "@icons/Manage.png";
 import supportIcon from "@icons/Support.png";
 import userPictroIcon from "@icons/User_Pictro.png";
+import {Link} from "react-router-dom";
 
 import "./sidebar.scss";
 
@@ -24,49 +25,49 @@ const Sidebar = () => {
           <div className="tools_list">
             <ul className="list-unstyled mb-0">
               <li>
-                <a
+                <Link
                   href=""
                   className="d-flex align-items-center gap-2 text-white"
                 >
                   <img src={aiIcon} alt="AI" />
                   AI Magic Tools
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href=""
                   className="d-flex align-items-center gap-2 text-white"
                 >
                   <img src={canvasIcon} alt="AI" />
                   Canvas
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href=""
                   className="d-flex align-items-center gap-2 text-white"
                 >
                   <img src={apiIcon} alt="AI" />
                   Imagine API
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href=""
                   className="d-flex align-items-center gap-2 text-white"
                 >
                   <img src={communityIcon} alt="AI" />
                   Community Feed
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href=""
                   className="d-flex align-items-center gap-2 text-white"
                 >
                   <img src={profileIcon} alt="AI" />
                   Profile
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -76,22 +77,22 @@ const Sidebar = () => {
           <div className="tools_list">
             <ul className="list-unstyled mb-0">
               <li>
-                <a
+                <Link
                   href=""
                   className="d-flex align-items-center gap-2 text-white"
                 >
                   <img src={manageIcon} alt="AI" />
                   Manage Subscription
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href=""
                   className="d-flex align-items-center gap-2 text-white"
                 >
                   <img src={supportIcon} alt="AI" />
                   Customer Support
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -108,13 +109,13 @@ const Sidebar = () => {
           <p className="mb-4 text-center">
             Craft magical AI artworks without limits and share them.
           </p>
-          <a
+          <Link
             href=""
             className="btn btn-primary upgrade_btn d-flex align-items-center gap-2 justify-content-center"
           >
             <img src={manageIcon} alt="" />
             Upgrade Plan
-          </a>
+          </Link>
         </div>
 
         <div className="sideBar_tools user_pictro mt-3 px-4">

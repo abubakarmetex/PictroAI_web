@@ -5,6 +5,7 @@ import AIToolsSection from "../../components/AIToolsSection/AIToolsSection";
 import VideoSection from "../../components/Dashboard/VideoSection/VideoSection";
 import Footer from "../../components/Footer/Footer";
 import Slider from "../../components/Slider/CustomSlider";
+import Slider2 from "../../components/Slider/CustomSlider2";
 
 const LandingPage = () => {
   return (
@@ -24,7 +25,7 @@ const LandingPage = () => {
           <Slider />
         </div>
         <div className="mt-3">
-          <Slider />
+          <Slider2 />
         </div>
         <div>
           <Footer />

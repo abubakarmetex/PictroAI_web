@@ -3,6 +3,7 @@ import img from "../../assets/images/compnay_logo_1.png";
 import img2 from "../../assets/images/compnay_logo_2.png";
 import img3 from "../../assets/images/compnay_logo_3.png";
 import img4 from "../../assets/images/compnay_logo_4.png";
+import {Link} from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -40,9 +41,9 @@ const Footer = () => {
               <div className="col-lg-9">
                 <h4 className="text-white">Information</h4>
                 <p className="text-white">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                  elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
-                  leo.
+                Discover the magic of creativity with Pictro AI! We turn ordinary text into 
+                captivating art and bring your images to life with fantastical characters. 
+                Unleash your imagination and explore endless possibilities
                 </p>
               </div>
               {/* <div className="col-lg-3">
@@ -76,14 +77,14 @@ const Footer = () => {
               </div> */}
               <div className="col-lg-3 contect_sec">
                 <h4 className="text-white">Contact Us</h4>
-                <a href="" className="text-white d-block">
+                <Link to="" className="text-white d-block">
                   <i className="bi bi-geo-alt-fill me-2 primary_clr fw-bolder"></i>{" "}
                 Mini Commercial Phase-7 Bahria Town Islamabad Capital Territory Islamabad
-                </a>
-                <a className="text-white d-block" href="mailto:support@metexlabs.com">
+                </Link>
+                <Link className="text-white d-block" to="mailto:support@metexlabs.com">
                   <i className="bi bi-envelope-fill me-2 primary_clr fw-bolder"></i>
                   support@metexlabs.com
-                </a>
+                </Link>
                 <div className="footer_form">
                   <form action="" className="">
                     <input

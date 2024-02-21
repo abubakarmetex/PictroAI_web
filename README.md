@@ -1,6 +1,6 @@
 # Instructions for Setting Up the Project
 
-Thank you for choosing to work with Ropstam! We are excited to provide you with instructions on how to set up the project on your local machine.
+Thank you for choosing to work with us We are excited to provide you with instructions on how to set up the project on your local machine.
 
 ## Prerequisites
 

@@ -12,17 +12,17 @@ export default function TopBar() {
      <nav class="container-fluid container_dashbord">
       <div class="d-flex justify-content-between align-items-center">
         <div class="back_arrow">
-          <a href="/dashboard"><img src={arrow_left} class="header_icons" alt="icon"/></a>
+          <Link to="dashboard"><img src={arrow_left} class="header_icons" alt="icon"/></Link>
         </div>
         <div class="tools_icon d-flex align-items-center gap-4">
           <Link to="/from-text"><img src={text_edit_img} class="header_icons" alt="icon"/></Link>
           <Link to="/image-remix"><img src={img_remix} class="header_icons" alt="icon"/></Link>
         </div>
         <div class="upgrade_token d-flex align-items-center gap-4">
-          <a href=""><img src={Mode_img} class="header_icons" alt="icon"/></a>
-          <a href="" class="header_icons text-white">0 <img src={Star_img} alt="icon" class="ms-1"/></a>
-          <a href="" class="btn btn-primary upgrade_btn_token d-flex align-items-center gap-2 justify-content-center">
-            Upgrade</a>
+          <Link to=""><img src={Mode_img} class="header_icons" alt="icon"/></Link>
+          <Link to="" class="header_icons text-white">0 <img src={Star_img} alt="icon" class="ms-1"/></Link>
+          <Link to="" class="btn btn-primary upgrade_btn_token d-flex align-items-center gap-2 justify-content-center">
+            Upgrade</Link>
         </div>
       </div>
     </nav>

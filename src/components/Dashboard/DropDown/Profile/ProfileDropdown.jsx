@@ -5,7 +5,7 @@ import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import './profiledropdown.scss';
 import userImg from '@images/user-img.jpg';
 import { logoutUser } from '../../../../redux/auth/auth_slice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const ProfileDropdown = () => {
     const [show, setShow] = useState(false);
@@ -14,16 +14,18 @@ const ProfileDropdown = () => {
     };
 
     const dispatch = useDispatch();
+    const { userInfo } = useSelector((state) => state.auth);
+    const username = userInfo ? userInfo.email : '';
 
     const handleLogout = () => {   
-        dispatch(logoutUser()); // Dispatch logoutUser action (redux
-     }
+        dispatch(logoutUser());
+    }
 
     return (
         <Dropdown className="profile-dropdown " onToggle={toggleDropdown}>
             <Dropdown.Toggle id="profile-dropdown-toggle" className='p-0'>
                 <img src={userImg} alt="user-img" />
-                <span className='text-white'>Hello Smith!</span>
+                <span className='text-white'>Hello {username}</span>
                 <FontAwesomeIcon className={show ? 'angle-up dropdown_icon' : ''} icon={faAngleDown} />
             </Dropdown.Toggle>
             <Dropdown.Menu show={show} id="profile-dropdown-menu">
