@@ -15,8 +15,8 @@ const ProfileDropdown = () => {
 
     const dispatch = useDispatch();
     const { userInfo } = useSelector((state) => state.auth);
-    const username = userInfo ? userInfo.email : '';
-
+    const username = userInfo ? userInfo : '';
+    console.log(username)
     const handleLogout = () => {   
         dispatch(logoutUser());
     }

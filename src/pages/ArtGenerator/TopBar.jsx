@@ -12,7 +12,7 @@ export default function TopBar() {
      <nav class="container-fluid container_dashbord">
       <div class="d-flex justify-content-between align-items-center">
         <div class="back_arrow">
-          <Link to="dashboard"><img src={arrow_left} class="header_icons" alt="icon"/></Link>
+          <Link to="/dashboard"><img src={arrow_left} class="header_icons" alt="icon"/></Link>
         </div>
         <div class="tools_icon d-flex align-items-center gap-4">
           <Link to="/from-text"><img src={text_edit_img} class="header_icons" alt="icon"/></Link>

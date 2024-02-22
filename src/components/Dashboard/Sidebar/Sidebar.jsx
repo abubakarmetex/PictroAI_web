@@ -26,7 +26,7 @@ const Sidebar = () => {
             <ul className="list-unstyled mb-0">
               <li>
                 <Link
-                  href=""
+                  to=""
                   className="d-flex align-items-center gap-2 text-white"
                 >
                   <img src={aiIcon} alt="AI" />
@@ -35,7 +35,7 @@ const Sidebar = () => {
               </li>
               <li>
                 <Link
-                  href=""
+                  to=""
                   className="d-flex align-items-center gap-2 text-white"
                 >
                   <img src={canvasIcon} alt="AI" />
@@ -44,7 +44,7 @@ const Sidebar = () => {
               </li>
               <li>
                 <Link
-                  href=""
+                  to=""
                   className="d-flex align-items-center gap-2 text-white"
                 >
                   <img src={apiIcon} alt="AI" />
@@ -53,7 +53,7 @@ const Sidebar = () => {
               </li>
               <li>
                 <Link
-                  href=""
+                  to=""
                   className="d-flex align-items-center gap-2 text-white"
                 >
                   <img src={communityIcon} alt="AI" />
@@ -62,7 +62,7 @@ const Sidebar = () => {
               </li>
               <li>
                 <Link
-                  href=""
+                  to=""
                   className="d-flex align-items-center gap-2 text-white"
                 >
                   <img src={profileIcon} alt="AI" />
@@ -78,7 +78,7 @@ const Sidebar = () => {
             <ul className="list-unstyled mb-0">
               <li>
                 <Link
-                  href=""
+                  to=""
                   className="d-flex align-items-center gap-2 text-white"
                 >
                   <img src={manageIcon} alt="AI" />
@@ -87,7 +87,7 @@ const Sidebar = () => {
               </li>
               <li>
                 <Link
-                  href=""
+                  to=""
                   className="d-flex align-items-center gap-2 text-white"
                 >
                   <img src={supportIcon} alt="AI" />

@@ -19,9 +19,10 @@ export const loginUser = createAsyncThunk(
 
 export const registerUser = createAsyncThunk(
   "auth/register",
-  async ({ email, password, phone_number }, { rejectWithValue }) => {
+  async ({ name, email, password, phone_number}, { rejectWithValue }) => {
     try {
       const { data } = await axiosWrapper("post", `/auth/signup/`, {
+        name,
         email,
         password,
         phone_number,
