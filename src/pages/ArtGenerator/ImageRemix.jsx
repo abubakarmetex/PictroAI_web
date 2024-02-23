@@ -31,6 +31,8 @@ import img12 from "@images/style12.svg";
 export default function ImageRemix() {
   const { userToken } = useSelector((state) => state?.auth);
   const [responseImg,setResponseImgUrl]=useState(null);
+  const [loading, setLoading] = useState(false);
+
   const styles = [
     { value: 0, label: "Pictro Cartoon", icon: img8 },
     { value: 1, label: "Professional 3D Model", icon: img12 },
@@ -107,6 +109,7 @@ export default function ImageRemix() {
 
   const generateImage = async () => {
     const formData = new FormData();
+    setLoading(true);
     
     // Ensure that textData.imageData contains the file object for the image
     if (textData.imageData instanceof File) {
@@ -134,6 +137,8 @@ export default function ImageRemix() {
       setImagePreview(newImageUrl);
     } catch (error) {
       console.error("Error generating image:", error);
+    }finally {
+      setLoading(false); // Set loading state to false when request completes (success or failure)
     }
   };
   
@@ -205,13 +210,15 @@ export default function ImageRemix() {
                             updateValueForKey("prompt", e.target.value)
                           }
                         />
-                        <button
-                          class="btn btn-primary position-absolute"
-                          onClick={generateImage}
-                        >
-                          <i class="bi bi-star-fill"></i>
-                          Generate
-                        </button>
+                    <button
+                      className="btn btn-primary position-absolute"
+                    onClick={generateImage}
+                    disabled={!imageData.picture || loading} // Disable button when no image selected or loading is true
+                    >
+                  <i className="bi bi-star-fill"></i>
+                  Generate
+                </button>
+                      {loading && <div className="loading-spinner"></div>}
                     </div>
                   </div>
                 </div>
