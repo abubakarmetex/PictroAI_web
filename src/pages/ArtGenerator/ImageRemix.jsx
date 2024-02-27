@@ -129,7 +129,7 @@ export default function ImageRemix() {
 
     try {
       // Make the API call with formData. Adjust the axiosWrapper call as needed.
-      const response = await axiosWrapper("post", `/avatar/`, formData,userToken,true);
+      const response = await axiosWrapper("post", `/anime/`, formData,userToken,true);
       
   
       const newImageUrl = response.image_url;
