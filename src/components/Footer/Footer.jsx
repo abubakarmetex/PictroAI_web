@@ -38,7 +38,7 @@ const Footer = () => {
           </div>
           <div className="main_footer pb-5">
             <div className="row gy-3">
-              <div className="col-lg-9">
+              <div className="col-lg-6">
                 <h4 className="text-white">Information</h4>
                 <p className="text-white">
                 Discover the magic of creativity with Pictro AI! We turn ordinary text into 
@@ -46,43 +46,14 @@ const Footer = () => {
                 Unleash your imagination and explore endless possibilities
                 </p>
               </div>
-              {/* <div className="col-lg-3">
-                <h4 className="text-white">Navigation</h4>
-                <ul className="list-unstyled">
-                  <li>
-                    <a href="">
-                      <i className="bi bi-chevron-right me-2 primary_clr fs-12 fw-bolder"></i>{" "}
-                      Homepage
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="bi bi-chevron-right me-2 primary_clr fs-12 fw-bolder"></i>{" "}
-                      About Us
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="bi bi-chevron-right me-2 primary_clr fs-12 fw-bolder"></i>{" "}
-                      Services
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="bi bi-chevron-right me-2 primary_clr fs-12 fw-bolder"></i>{" "}
-                      Project
-                    </a>
-                  </li>
-                </ul>
-              </div> */}
-              <div className="col-lg-3 contect_sec">
+              <div className="col-lg-6 contect_sec">
                 <h4 className="text-white">Contact Us</h4>
                 <Link to="" className="text-white d-block">
-                  <i className="bi bi-geo-alt-fill me-2 primary_clr fw-bolder"></i>{" "}
+                  <i className="bi bi-geo-alt-fill me-1 primary_clr fw-bolder text-white"></i>
                 Mini Commercial Phase-7 Bahria Town Islamabad Capital Territory Islamabad
                 </Link>
                 <Link className="text-white d-block" to="mailto:support@metexlabs.com">
-                  <i className="bi bi-envelope-fill me-2 primary_clr fw-bolder"></i>
+                  <i className="bi bi-envelope-fill me-2 primary_clr fw-bolder text-white"></i>
                   support@metexlabs.com
                 </Link>
                 <div className="footer_form">

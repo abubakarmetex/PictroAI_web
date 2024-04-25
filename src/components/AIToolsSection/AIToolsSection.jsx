@@ -54,7 +54,7 @@ const AIToolsSection = () => {
             </p>
           </div>
           {toolsData.map((tool, index) => (
-            <div key={index} className="col-lg-3 col-md-6">
+            <div key={index} className="col-lg-4 col-md-6">
               <div className="al_card m-auto bg_primary">
                 <div className="card_image">
                   <img

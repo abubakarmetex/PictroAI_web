@@ -10,10 +10,14 @@ import manageIcon from "@icons/Manage.png";
 import supportIcon from "@icons/Support.png";
 import userPictroIcon from "@icons/User_Pictro.png";
 import {Link} from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
 
 import "./sidebar.scss";
 
 const Sidebar = () => {
+  const { userpoints } = useSelector((state) => state.auth);
+    const points = userpoints ? userpoints : '';
+
   return (
     <>
       <aside className="sideBar">
@@ -62,7 +66,7 @@ const Sidebar = () => {
               </li>
               <li>
                 <Link
-                  to=""
+                  to="/profile"
                   className="d-flex align-items-center gap-2 text-white"
                 >
                   <img src={profileIcon} alt="AI" />
@@ -100,7 +104,7 @@ const Sidebar = () => {
 
         <div className="sideBar_tools upgrade_plan mt-3 px-4">
           <span className="text-black bg-white rounded-2 py-2 px-3 free_btn mb-2">
-            0 <i className="bi bi-star-fill"></i>
+            {points} <i className="bi bi-star-fill"></i>
             &nbsp; &nbsp; Free
           </span>
           <h3 className="text-white text-center mb-2">
@@ -110,7 +114,7 @@ const Sidebar = () => {
             Craft magical AI artworks without limits and share them.
           </p>
           <Link
-            to=""
+            to="/pricing"
             className="btn btn-primary upgrade_btn d-flex align-items-center gap-2 justify-content-center"
           >
             <img src={manageIcon} alt="" />

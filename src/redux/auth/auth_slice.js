@@ -16,6 +16,7 @@ const authSlice = createSlice({
   reducers: {
     logoutUser: (state) => {
       state.userInfo = null;
+      state.userpoints = null;
       state.userToken = null;
       state.success = false;
       state.loading = false;
@@ -32,12 +33,15 @@ const authSlice = createSlice({
       .addCase(loginUser.pending, (state) => {
         state.userInfo = null;
         state.userToken = null;
+        state.userpoints = null;
         state.loading = true;
         state.error = null;
         state.isLoggedIn = true;
       })
       .addCase(loginUser.fulfilled, (state, { payload }) => {
         state.userInfo = payload.username;
+        console.log(payload)
+        state.userpoints = payload.Points;
         state.userToken = payload.token;
         state.loading = false;
         state.error = null;
