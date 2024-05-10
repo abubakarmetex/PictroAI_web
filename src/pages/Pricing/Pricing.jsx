@@ -80,10 +80,10 @@ const Dashboard = () => {
                             <span className="price">$5.04</span>
                             <span className="time">/ Weekly</span>
                           </div>
-                          <span className="plan_dic d-block text-center mt-2">
+                          {/* <span className="plan_dic d-block text-center mt-2">
                             Billed yearly, ex. tax
-                          </span>
-                          <div className="plan_btn text-center mt-2">
+                          </span> */}
+                          <div className="plan_btn text-center mt-4">
                             <a href="https://buy.stripe.com/test_9AQ28xbh5eHgemA289" className="btn btn-primary border-0">
                               Subscribe To Basic
                             </a>
@@ -132,10 +132,10 @@ const Dashboard = () => {
                             <span className="price">$15.03</span>
                             <span className="time">/ Month</span>
                           </div>
-                          <span className="plan_dic d-block text-center mt-2">
+                          {/* <span className="plan_dic d-block text-center mt-2">
                             Billed yearly, ex. tax
-                          </span>
-                          <div className="plan_btn text-center mt-2">
+                          </span> */}
+                          <div className="plan_btn text-center mt-4">
                             <a href="https://buy.stripe.com/test_bIYeVjgBp9mWfqE7ss" className="btn btn-primary border-0">
                               Subscribe To Standard
                             </a>

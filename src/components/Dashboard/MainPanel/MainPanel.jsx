@@ -47,7 +47,7 @@ const MainPanel = (props) => {
       linkTo:"/image-remix"
     },
     {
-      title: "Image Enhancer",
+      title: "Image to Anime",
       description: "Transform your words into stunning AI arts.",
       imageSrc: img6,
       linkTo:"/image-remix"
@@ -76,7 +76,7 @@ const MainPanel = (props) => {
   }, [dispatch]);
   return (
     <>
-      <section className="container-fluid container_dashbord pb-0 pt-5 d-md-block d-none">
+      <section className="container-fluid  pb-0 pt-5 d-md-block d-none">
         <div className="row">
           <div className="col-lg-3 col-md-4 col-4">
             {/* Content views will be rendered here */}
@@ -85,7 +85,7 @@ const MainPanel = (props) => {
           </div>
           <div className="col-lg-9 col-md-8 col-8">
             <div className="main_body_content">
-              <Link to="/from-text" className="generate_img_sec d-block">
+              {/* <Link to="/from-text" className="generate_img_sec d-block">
               <video src={text_to_img} muted={true} loop={true} autoPlay={true} width="100%" className="rounded-2"></video>
                 <div className="card_content mt-3">
                   <h3 className="text-white">Text to image</h3>
@@ -93,11 +93,11 @@ const MainPanel = (props) => {
                     Transform your words into stunning AI Arts
                   </p>
                 </div>
-              </Link>
-              <div className="dashbord_card_sec mt-5 row">
-                <div className="col-12">
+              </Link> */}
+              <div className="dashbord_card_sec row">
+                {/* <div className="col-12">
                   <h2 className="text-white">AI Tools</h2>
-                </div>
+                </div> */}
                 <div className="row gy-4 mt-0">
                   {toolsData.map((tool, index) => (
                     <div key={index} className="col-lg-4 col-md-6">

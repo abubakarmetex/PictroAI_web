@@ -37,6 +37,14 @@ export default function FormText() {
         { value: "Anime", label: "Anime Artwork", icon: img10 },
         { value: "Cinematic", label: "Breathtaking", icon: img9 },
         { value: "Comic Book", label: "Fantasy Art", icon: img5 },
+        { value: "Digital Art", label: "Anime Artwork", icon: img2 },
+        { value: "Enhance", label: "Breathtaking", icon: img3 },
+        { value: "Fantasy Art", label: "Fantasy Art", icon: img4 },
+        { value: "Isometric Style", label: "Anime Artwork", icon: img6 },
+        { value: "Line Art", label: "Breathtaking", icon: img7 },
+        { value: "Lowpoly", label: "Fantasy Art", icon: img11 },
+
+
         { value: "Craft Clay", label: "Watercolor Anime (default)", icon: img1 },
       ];
     const models = [
@@ -50,12 +58,34 @@ export default function FormText() {
           value: "majicmixRealistic_betterV2V25",
           icon: art_gen_card1,
         },
-        // { name: "", value: "meinamix_meinaV11" },
         {
           name: "Realistic vision",
           value: "realisticVisionV51_v51VAE",
           icon: art_gen_card7,
         },
+
+
+
+        {
+          name: "Meinamix",
+          value: "meinamix_meinaV11",
+          icon: art_gen_card2,
+        },
+
+        {
+          name: "Diffusion",
+          value: "epicDiffusion_epicDiffusion11",
+          icon: art_gen_card4,
+        },
+
+        {
+          name: "Dreamshaper",
+          value: "dreamshaper_8",
+          icon: art_gen_card9,
+        },
+
+
+
       ];  
   const [textData, setTextData] = useState({
     model: "epicrealism_pureEvolutionV4",

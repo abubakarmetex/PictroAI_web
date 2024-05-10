@@ -4,7 +4,7 @@ import { Button, Col, Row, Container, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import authBg from "@images/auth-bg.jpg";
-import logoImg from "@images/logo.png";
+import logoImg from "@images/site_logo.svg";
 import Input from "@components/Input/Input";
 import * as Yup from "yup";
 import {useNavigate} from "react-router-dom";
@@ -45,15 +45,15 @@ const Login = () => {
       </Helmet>
       <div className="auth-main-wrapper">
         <Container>
-          <Card className="auth-card-wrapper">
+          <Card className="auth-card-wrapper" bg="black">
             <Row className="justify-content-center g-0">
-              <Col xs={12} sm={12} md={12} lg={6}>
+              {/* <Col xs={12} sm={12} md={12} lg={6}>
                 <img className="auth-bg" src={authBg} alt="auth-background" />
-              </Col>
+              </Col> */}
               <Col xs={12} sm={12} md={12} lg={6}>
-                <div className="auth-form-wrapper">
+                <div className="auth-form-wrapper text-white">
                   <img className="auth-logo" src={logoImg} alt="auth-logo" />
-                  <h3 className="auth-form-title">Sign in to you account</h3>
+                  <h3 className="auth-form-title text-white">Sign in to your account</h3>
                   <Formik
                     initialValues={inititialValues}
                     validationSchema={validationSchema}
@@ -74,12 +74,12 @@ const Login = () => {
                           type="password"
                         />
                         <Button
-                          className="my-3"
+                          className="my-3 battn"
                           type="submit"
                           disabled={loading}
                         >
                           {isSubmitting ? (
-                            <Spinner animation="border" size="sm" />
+                            <Spinner animation="border" size="lg" />
                           ) : (
                             "Login"
                           )}
@@ -87,7 +87,7 @@ const Login = () => {
                       </FormikForm>
                     )}
                   </Formik>
-                  <Link className="auth-link" to="/forgot-password">
+                  <Link className="auth-link" to="/">
                     Forgot password?
                   </Link>
                   <p className="auth-bottom-text">

@@ -14,7 +14,7 @@ const AIToolsSection = () => {
       imageSrc: img,
     },
     {
-      title: "Image Anime",
+      title: "Image Enhancer",
       description: "Enhance your images using advanced AI algorithms.",
       imageSrc: img2,
     },
@@ -34,7 +34,7 @@ const AIToolsSection = () => {
       imageSrc: img5,
     },
     {
-      title: "Image Enhancer",
+      title: "Image to Anime",
       description: "Transform your words into stunning AI arts.",
       imageSrc: img6,
     },

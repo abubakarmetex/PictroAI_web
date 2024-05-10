@@ -19,7 +19,7 @@ const MainRoutes = () => {
       <Route path="/" exact element={<PublicLayout />}>
         <Route path="login" exact element={<Login />} />
         <Route path="signup" exact element={<SignUp />} />
-        <Route index exact element={<LandingPage />} />
+        <Route index exact element={<Login />} />
         </Route>
       {/* protected layout */}
       <Route path="/" exact element={<DashboardLayout />}>

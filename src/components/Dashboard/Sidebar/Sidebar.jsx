@@ -1,6 +1,6 @@
 import React from "react";
 import Dropdown from "../DropDown/Profile/ProfileDropdown";
-import site_logo from "@images/site_logo.png";
+import site_logo from "@images/site_logo.svg";
 import aiIcon from "@icons/AI.png";
 import canvasIcon from "@icons/canvas.png";
 import apiIcon from "@icons/API.png";
@@ -52,12 +52,12 @@ const Sidebar = () => {
                   className="d-flex align-items-center gap-2 text-white"
                 >
                   <img src={apiIcon} alt="AI" />
-                  Imagine API
+                  Pictro API
                 </Link>
               </li>
               <li>
                 <Link
-                  to=""
+                  to="https://discord.gg/5tmEV3KBfz"
                   className="d-flex align-items-center gap-2 text-white"
                 >
                   <img src={communityIcon} alt="AI" />
@@ -80,7 +80,7 @@ const Sidebar = () => {
         <div className="sideBar_tools mt-3">
           <div className="tools_list">
             <ul className="list-unstyled mb-0">
-              <li>
+              {/* <li>
                 <Link
                   to=""
                   className="d-flex align-items-center gap-2 text-white"
@@ -88,10 +88,10 @@ const Sidebar = () => {
                   <img src={manageIcon} alt="AI" />
                   Manage Subscription
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
-                  to=""
+                  to="https://discord.gg/B2dCZuSQAY"
                   className="d-flex align-items-center gap-2 text-white"
                 >
                   <img src={supportIcon} alt="AI" />
