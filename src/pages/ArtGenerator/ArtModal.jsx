@@ -1,19 +1,23 @@
 import React, { useState } from "react";
 import "./art-generator.scss";
+import premium_icon from "/src/assets/icons/crown.png";
 
-export default function ArtModal({models, updateValueForKey }) {
-  
+export default function ArtModal({ models, updateValueForKey }) {
+  const [selectedModels, setSelectedModels] = useState([]);
 
-  const handleSelectModel = (value) => {
-    updateValueForKey("model",value)
+  const handleSelectModel = (value, premium) => {
+    // Only allow selection if the model is not premium or if it's already selected
+    if (!premium || selectedModels.includes(value)) {
+      updateValueForKey("model", value);
+    }
   };
-
+  
   return (
     <>
       <div
         className="modal fade art_modal"
         id="modalsModel"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="modalsModelLabel"
         aria-hidden="true"
       >
@@ -49,14 +53,22 @@ export default function ArtModal({models, updateValueForKey }) {
                           handleSelectModel(model?.value);
                         }}
                         key={index + "--models"}
-                        className="col-4 cursor-pointer"
-                        data-bs-dismiss="modal" 
+                        className="col-4 cursor-pointer position-relative"
+                        data-bs-dismiss="modal"
                       >
                         <img
                           src={model?.icon}
-                          className="w-100 "
+                          className="w-100"
                           alt="search"
                         />
+                        {/* Render premium icon if the model is premium and not selected */}
+                        {model.premium && !selectedModels.includes(model.value) && (
+                          <img
+                            src={premium_icon}
+                            className="icon-overlay"
+                            alt="premium"
+                          />
+                        )}
                       </div>
                     ))}
                   </div>

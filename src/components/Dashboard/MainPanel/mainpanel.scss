@@ -43,3 +43,34 @@
     max-height: 100vh;
     overflow-y: hidden;
 }
+.text-white{
+    text-align: center;
+}
+
+.announcement-bar {
+    width: 100%;
+    padding: 15px 0;
+    background: linear-gradient(90deg, #9600ff33, #9600ff33);
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.announcement-bar .marquee-content {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}

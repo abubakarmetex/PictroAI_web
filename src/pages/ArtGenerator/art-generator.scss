@@ -72,6 +72,9 @@ input::placeholder{
 .art_modal .modal-content{
   background-color: #000;
   color: #fff;
+  position: absolute;
+  left: 70%;
+  width: 75%;
 }
 .btn-close{
   filter: invert(1);
@@ -144,4 +147,11 @@ input::placeholder{
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+}
+
+.icon-overlay {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 25px;
 }

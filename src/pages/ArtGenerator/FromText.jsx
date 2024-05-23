@@ -27,6 +27,7 @@ import img9 from "@images/style9.svg";
 import img10 from "@images/style10.svg";
 import img11 from "@images/style11.svg";
 import img12 from "@images/style12.svg";
+import premium_icon from "/src/assets/icons/Manage.png"
 
 export default function FormText() {
     const { userToken } = useSelector((state) => state?.auth);
@@ -35,11 +36,11 @@ export default function FormText() {
         { value: "3D Model", label: "Pictro Cartoon", icon: img8 },
         { value: "Analog Film", label: "Professional 3D Model", icon: img12 },
         { value: "Anime", label: "Anime Artwork", icon: img10 },
-        { value: "Cinematic", label: "Breathtaking", icon: img9 },
+        { value: "Cinematic", label: "Breathtaking", icon: img9 , premium: true },
         { value: "Comic Book", label: "Fantasy Art", icon: img5 },
         { value: "Digital Art", label: "Anime Artwork", icon: img2 },
         { value: "Enhance", label: "Breathtaking", icon: img3 },
-        { value: "Fantasy Art", label: "Fantasy Art", icon: img4 },
+        { value: "Fantasy Art", label: "Fantasy Art", icon: img4,premium: true },
         { value: "Isometric Style", label: "Anime Artwork", icon: img6 },
         { value: "Line Art", label: "Breathtaking", icon: img7 },
         { value: "Lowpoly", label: "Fantasy Art", icon: img11 },
@@ -52,11 +53,13 @@ export default function FormText() {
           name: "Epic Realism",
           value: "epicrealism_pureEvolutionV4",
           icon: art_gen_card3,
+          premium: true
         },
         {
           name: "Majic",
           value: "majicmixRealistic_betterV2V25",
           icon: art_gen_card1,
+
         },
         {
           name: "Realistic vision",
@@ -70,12 +73,14 @@ export default function FormText() {
           name: "Meinamix",
           value: "meinamix_meinaV11",
           icon: art_gen_card2,
+          premium: true
         },
 
         {
           name: "Diffusion",
           value: "epicDiffusion_epicDiffusion11",
           icon: art_gen_card4,
+          premium: true
         },
 
         {

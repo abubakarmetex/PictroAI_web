@@ -52,7 +52,7 @@ const Signup = () => {
       <Helmet>
         <title>Sign Up | Template</title>
       </Helmet>
-      <div className="auth-main-wrapper">
+      <div className="auth-main-wrapper bgchange">
         <Container>
           <Card className="auth-card-wrapper" bg="black">
             <Row className="justify-content-center g-0">

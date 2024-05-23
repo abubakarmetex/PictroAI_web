@@ -21,11 +21,9 @@ const Sidebar = () => {
   return (
     <>
       <aside className="sideBar">
+      
         <div className="sideBar_tools">
-          <div className="logo d-flex gap-3 align-items-center">
-            <img src={site_logo} alt="" width="37px" height="37px" />
-            <h3 className="text-white">Pictro AI</h3>
-          </div>
+          
           <div className="tools_list">
             <ul className="list-unstyled mb-0">
               <li>

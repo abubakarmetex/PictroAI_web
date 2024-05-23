@@ -7,6 +7,7 @@ import img4 from "@images/art-gen-card4.png";
 import img5 from "@images/art-gen-card5.png";
 import img6 from "@images/art-gen-card6.png";
 import text_to_img from "@images/text_to_image.mp4";
+import site_logo from "@images/site_logo.svg";
 import "./mainpanel.scss";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -47,8 +48,8 @@ const MainPanel = (props) => {
       linkTo:"/image-remix"
     },
     {
-      title: "Image to Anime",
-      description: "Transform your words into stunning AI arts.",
+      title: "Anime Creator",
+      description: "Turn your Images into Anime",
       imageSrc: img6,
       linkTo:"/image-remix"
     },
@@ -77,8 +78,16 @@ const MainPanel = (props) => {
   return (
     <>
       <section className="container-fluid  pb-0 pt-5 d-md-block d-none">
+      <div class="announcement-bar">
+        <div class="marquee-content">We're thrilled to announce that a new design for our website is on the way! Our team is working hard to bring you a fresh and improved online experience.</div>
+    </div>
         <div className="row">
-          <div className="col-lg-3 col-md-4 col-4">
+        
+        <div className="logo d-flex gap-3 align-items-center mt-3">
+            <img src={site_logo} alt="" width="37px" height="37px" />
+            <h3 className="text-white">Pictro AI</h3>
+          </div>
+          <div className="col-lg-2 col-md-4 col-4">
             {/* Content views will be rendered here */}
             {props.children}
             <Sidebar />
@@ -100,7 +109,7 @@ const MainPanel = (props) => {
                 </div> */}
                 <div className="row gy-4 mt-0">
                   {toolsData.map((tool, index) => (
-                    <div key={index} className="col-lg-4 col-md-6">
+                    <div key={index} className="col-lg-3 col-md-6">
                       <div className="al_card m-auto bg_primary">
                         <Link to={tool.linkTo}>
                         <div className="card_image">
