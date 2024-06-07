@@ -52,6 +52,9 @@ const Signup = () => {
       <Helmet>
         <title>Sign Up | Template</title>
       </Helmet>
+      <div class="announcement-bar">
+        <div class="marquee-content">We're thrilled to announce that a new design for our website is on the way! Our team is working hard to bring you a fresh and improved online experience.</div>
+    </div>
       <div className="auth-main-wrapper bgchange">
         <Container>
           <Card className="auth-card-wrapper" bg="black">
